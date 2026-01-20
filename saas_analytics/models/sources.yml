@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: public
+    database: saas_metrics
+    schema: public
+    tables:
+      - name: users
+        description: "Raw user data with signup information"
+      - name: subscriptions
+        description: "Subscription records with start/end dates and MRR"
+      - name: plans
+        description: "Available subscription plans"
+      - name: events
+        description: "User activity events"
+
+models:
+  - name: fct_mrr_by_month
+    description: "Monthly MRR metrics aggregated from active subscriptions"
+    columns:
+      - name: month
+        description: "First day of the month"
+      - name: active_subscribers
+        description: "Number of active subscribers in that month"
+      - name: total_mrr
+        description: "Total Monthly Recurring Revenue"
+      - name: avg_mrr_per_user
+        description: "Average MRR per subscriber"
+
+  - name: fct_churn_by_month
+    description: "Monthly churn rate calculations"
+    columns:
+      - name: month
+        description: "Month when churn occurred"
+      - name: churned_users
+        description: "Number of users who churned this month"
+      - name: churned_mrr
+        description: "MRR lost from churned users"
+      - name: active_users_start_of_month
+        description: "Total active users at start of month"
+      - name: churn_rate_percent
+        description: "Percentage of users who churned"

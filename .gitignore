@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.csv
+venv/
+env/
+.env
+
+# dbt
+saas_analytics/target/
+saas_analytics/dbt_packages/
+saas_analytics/logs/
+saas_analytics/dbt_modules/
+
+# OS
+.DS_Store
+.vscode/
