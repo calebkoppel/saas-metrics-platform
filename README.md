@@ -2,11 +2,11 @@
 
 A modern data analytics platform demonstrating end-to-end data engineering with industry-standard tools.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project showcases the transition from traditional BI tools to modern data stack architecture, featuring synthetic SaaS company data with realistic patterns for MRR, churn, and user engagement.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Data Generation**: Python, Pandas, Faker
 - **Database**: PostgreSQL
@@ -14,16 +14,16 @@ This project showcases the transition from traditional BI tools to modern data s
 - **API**: FastAPI *(in progress)*
 - **Frontend**: React + TypeScript *(planned)*
 
-## 📊 Current Features
+## Current Features
 
-✅ Realistic SaaS data generation (10K users, 467K events)  
-✅ PostgreSQL data warehouse  
-✅ dbt models for key metrics:
+Realistic SaaS data generation (10K users, 467K events)  
+PostgreSQL data warehouse  
+dbt models for key metrics:
   - Monthly Recurring Revenue (MRR)
   - Churn rate analysis
   - Cohort retention *(coming soon)*
 
-## 🚀 What This Demonstrates
+## What This Demonstrates
 
 - Modern data stack architecture
 - SQL transformation best practices with dbt
@@ -31,7 +31,7 @@ This project showcases the transition from traditional BI tools to modern data s
 - Version-controlled analytics
 - Production-ready data pipelines
 
-## 📁 Project Structure
+## Project Structure
 ```
 saas-metrics-platform/
 ├── data-generation/     # Python scripts for synthetic data
@@ -40,10 +40,8 @@ saas-metrics-platform/
 └── frontend/           # React dashboard (coming soon)
 ```
 
-## 🎓 Background
+## Background
 
 Built as part of learning modern data engineering tools, transitioning from SQL Server + Power BI to cloud-native data stack.
 
 ---
-
-**Status**: Week 1 complete - Data generation and dbt transformations working

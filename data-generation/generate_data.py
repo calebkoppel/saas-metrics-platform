@@ -20,11 +20,11 @@ PLANS = [
 
 MONTHLY_CHURN_RATE = 0.06
 
-print("🚀 Generating SaaS data...")
+print("Generating SaaS data...")
 
 # Generate Plans
 df_plans = pd.DataFrame(PLANS)
-print(f"✓ Generated {len(df_plans)} plans")
+print(f"Generated {len(df_plans)} plans")
 
 # Generate Users
 users = []
@@ -48,9 +48,9 @@ for user_id in range(1, NUM_USERS + 1):
     })
 
 df_users = pd.DataFrame(users)
-print(f"✓ Generated {len(df_users)} users")
-print(f"  - Active: {len(df_users[df_users['status'] == 'active'])}")
-print(f"  - Churned: {len(df_users[df_users['status'] == 'churned'])}")
+print(f"Generated {len(df_users)} users")
+print(f"  Active: {len(df_users[df_users['status'] == 'active'])}")
+print(f"  Churned: {len(df_users[df_users['status'] == 'churned'])}")
 
 # Generate Subscriptions
 subscriptions = []
@@ -81,7 +81,7 @@ for _, user in df_users.iterrows():
     subscription_id += 1
 
 df_subscriptions = pd.DataFrame(subscriptions)
-print(f"✓ Generated {len(df_subscriptions)} subscriptions")
+print(f"Generated {len(df_subscriptions)} subscriptions")
 
 # Generate Events
 events = []
@@ -121,17 +121,17 @@ for _, user in df_users.iterrows():
         event_id += 1
 
 df_events = pd.DataFrame(events)
-print(f"✓ Generated {len(df_events)} events")
+print(f"Generated {len(df_events)} events")
 
 # Save to CSV
-print("\n💾 Saving to CSV files...")
+print("\nSaving to CSV files...")
 df_plans.to_csv("plans.csv", index=False)
 df_users.to_csv("users.csv", index=False)
 df_subscriptions.to_csv("subscriptions.csv", index=False)
 df_events.to_csv("events.csv", index=False)
 
-print("\n✅ Data generation complete!")
-print("\n📊 Quick Stats:")
+print("\nData generation complete!")
+print("\nQuick Stats:")
 active_subs = df_subscriptions[df_subscriptions['end_date'].isna()]
 print(f"Total MRR (active): ${active_subs['mrr'].sum():,.2f}")
 print(f"Active subscribers: {len(active_subs)}")
