@@ -11,7 +11,7 @@ This project showcases the transition from traditional BI tools to modern data s
 - **Data Generation**: Python, Pandas, Faker
 - **Database**: PostgreSQL
 - **Transformation**: dbt (data build tool)
-- **API**: FastAPI *(in progress)*
+- **API**: FastAPI
 - **Frontend**: React + TypeScript *(planned)*
 
 ## Current Features
