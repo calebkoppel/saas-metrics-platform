@@ -36,8 +36,8 @@ dbt models for key metrics:
 saas-metrics-platform/
 ├── data-generation/     # Python scripts for synthetic data
 ├── saas_analytics/      # dbt project with transformation models
-├── backend/            # FastAPI (coming soon)
-└── frontend/           # React dashboard (coming soon)
+├── backend/            # FastAPI
+└── frontend/           # React dashboard
 ```
 
 ## Background
