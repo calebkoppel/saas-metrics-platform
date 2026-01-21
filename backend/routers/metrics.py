@@ -88,7 +88,6 @@ def get_users_by_plan(
         Get subscribers by plan type
     """
     query = "SELECT * FROM analytics.fct_users_by_plan WHERE 1=1"
-    params = {}
 
     query += " ORDER BY plan_type ASC"
 
