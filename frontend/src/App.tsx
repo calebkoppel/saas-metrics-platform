@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { getMRR, getChurn, getSummary } from './services/api';
-import { MRRMetric, ChurnMetric, Summary } from './types/metrics';
+import { getMRR, getChurn, getSummary, getUsers } from './services/api';
+import { MRRMetric, ChurnMetric, Summary, UsersPlan } from './types/metrics';
 import KPICards from './components/KPICards';
 import MRRChart from './components/MRRChart';
 import ChurnChart from './components/ChurnChart';
+import UsersChart from './components/UsersChart';
 
 function App() {
   const [mrrData, setMrrData] = useState<MRRMetric[]>([]);
   const [churnData, setChurnData] = useState<ChurnMetric[]>([]);
+  const [usersData, setUsersData] = useState<UsersPlan[]>([])
   const [summary, setSummary] = useState<Summary | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -16,12 +18,14 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const [mrrResponse, churnResponse, summaryResponse] = await Promise.all([
+        const [mrrResponse, churnResponse, summaryResponse, usersResponse] = await Promise.all([
           getMRR(),
           getChurn(),
           getSummary(),
+          getUsers()
         ]);
-        
+
+        setUsersData(usersResponse);
         setMrrData(mrrResponse);
         setChurnData(churnResponse);
         setSummary(summaryResponse);
@@ -62,6 +66,7 @@ function App() {
         <div className="grid grid-cols-1 gap-6 mb-6">
           <MRRChart data={mrrData} loading={loading} />
           <ChurnChart data={churnData} loading={loading} />
+          <UsersChart data={usersData} loading={loading} />
         </div>
       </main>
     </div>

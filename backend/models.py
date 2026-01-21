@@ -24,3 +24,10 @@ class ChurnMetric(BaseModel):
 class HealthCheck(BaseModel):
     status: str
     database: str
+
+class UsersPlan(BaseModel):
+    plan_type: str
+    user_count: int
+
+    class Config:
+        from_attributes = True

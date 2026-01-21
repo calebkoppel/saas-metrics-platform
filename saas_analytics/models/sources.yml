@@ -40,3 +40,11 @@ models:
         description: "Total active users at start of month"
       - name: churn_rate_percent
         description: "Percentage of users who churned"
+
+  - name: fct_users_by_plan
+    description: "Monthly users by plan type"
+    columns:
+      - name: plan_type
+        description: "Type of subscription"
+      - name: user_count
+        description: "Number of users per plan type"

@@ -19,3 +19,8 @@ export interface Summary {
   avg_mrr_per_user: number;
   churn_rate: number;
 }
+
+export interface UsersPlan {
+  plan_type: string;
+  user_count: number;
+}

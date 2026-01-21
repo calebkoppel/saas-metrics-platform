@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { MRRMetric, ChurnMetric, Summary } from '../types/metrics';
+import { MRRMetric, ChurnMetric, Summary, UsersPlan } from '../types/metrics';
 
 const API_BASE_URL = 'http://localhost:8000';
 
@@ -32,6 +32,11 @@ export const getSummary = async (): Promise<Summary> => {
   const response = await api.get('/metrics/summary');
   return response.data;
 };
+
+export const getUsers = async (): Promise<UsersPlan []> =>{
+  const response = await api.get('/metrics/users-by-plan');
+  return response.data;
+}
 
 export const healthCheck = async (): Promise<any> => {
   const response = await api.get('/health');

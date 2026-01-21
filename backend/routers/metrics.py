@@ -79,6 +79,30 @@ def get_churn(
         for row in rows
     ]
 
+
+@router.get("/users-by-plan", response_model=List[models.UsersPlan])
+def get_users_by_plan(
+    db: Session = Depends(database.get_db)
+):
+    """
+        Get subscribers by plan type
+    """
+    query = "SELECT * FROM analytics.fct_users_by_plan WHERE 1=1"
+    params = {}
+
+    query += " ORDER BY plan_type ASC"
+
+    result = db.execute(text(query))
+    rows = result.fetchall()
+
+    return [
+        {
+            "plan_type": row[0],
+            "user_count": row[1]
+        }
+        for row in rows
+    ]
+
 @router.get("/summary")
 def get_summary(db: Session = Depends(database.get_db)):
     """
