@@ -13,6 +13,15 @@ export interface ChurnMetric {
   churn_rate_percent: number;
 }
 
+export interface CohortRetention{
+  cohort_month: string;
+  m1_retention: number;
+  m3_retention: number;
+  m6_retention: number;
+  m12_retention: number;
+
+}
+
 export interface Summary {
   current_mrr: number;
   active_subscribers: number;
